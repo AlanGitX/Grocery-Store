@@ -1,0 +1,22 @@
+<div class=" text-center" style="width: 100%;">
+  <div class="card m-5" style="width: 18rem"  *ngFor="let item of allItems | filter :searchTerm : 'title'">
+      <img
+      height="200px"
+        [src]="item.filename"
+        class="card-img-top"
+        alt="..."
+        style="border-radius: 50px;"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title.length > 15 ? item.title.substring(0,15)+"..." : item.title }}</h5>
+        <p class="card-text">
+          {{item.description.length > 25 ? item.description.substring(0,25)+"..." : item.description }}
+        </p>
+        <!-- <a routerLink="/view/{{item.id}}">link</a> -->
+        <button routerLink="/view/{{item.id}}" class="btn btn-primary"
+          >Click for details</button
+        >
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+<div class="row m-5" *ngIf="len==0">
+  <div class="col text-center">
+    <img
+      height="500px"
+      src="https://cdn.dribbble.com/users/2046015/screenshots/5973727/06-loader_telega.gif"
+      alt=""
+    />
+
+    <h1>No items in the wishlist</h1>
+    <button class="btn btn-primary" routerLink="/items">Shop more</button>
+  </div>
+</div>
+
+<section class="py-5" *ngIf="len!=0">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div
+      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+    >
+      <div class="col mb-5" *ngFor="let item of WishlistItems">
+        <div class="card h-100">
+          <!-- Product image-->
+          <img
+            class="card-img-top"
+            [src]="item.filename"
+            alt="..."
+            height="200px"
+          />
+          <!-- Product details-->
+          <div class="card-body p-4">
+            <div class="text-center">
+              <!-- Product name-->
+              <h5 class="fw-bolder">{{item.title}}</h5>
+              <!-- Product price-->
+              ${{item.price}}
+            </div>
+          </div>
+          <!-- Product actions-->
+          <div
+            class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center"
+          >
+            <a (click)="removeFromWishlist(item.id)" class="btn btn-danger">
+              <i class="fa-solid fa-trash fa-xl"></i
+            ></a>
+            &nbsp;
+            <a (click)="AddToCart(item)" class="btn btn-primary">
+              <i class="fa-solid fa-cart-shopping fa-xl"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

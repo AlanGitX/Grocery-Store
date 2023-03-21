@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+<div class="col-6">
+            <a class="navbar-brand" routerLink="/items"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjcCHQfg7G7N-8mR_UGJqqnq0ebvLY9e_HhgNrOEBaebV8TZp2_BSBWXgHuyIrabSHEtI&usqp=CAU" height="50px" alt=""> Grokart</a>
+
+</div>       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <input (keyup)="search($event)" type="text" class="search-click" name="" placeholder="search here..." />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/wishlist"> <i class="fa-solid fa-heart fa-xl"></i> &nbsp; Wishlist</a>
+            </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/cart"><i class="fa-solid fa-cart-shopping fa-xl"></i> &nbsp; Cart</a>
+              </li>
+          </ul>
+
+        </div>
+    </div>
+  </nav>
